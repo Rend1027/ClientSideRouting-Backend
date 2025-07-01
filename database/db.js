@@ -1,6 +1,7 @@
+require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const pg = require("pg");
-
+console.log("🌐 Connecting to:", process.env.DATABASE_URL || "postgres://localhost:5432/todo_list");
 const db = new Sequelize(
   process.env.DATABASE_URL || "postgres://localhost:5432/todo_list",
   {
